@@ -17,10 +17,10 @@ public class Main {
 
 		WorkoutRepository workouts = new WorkoutRepository();
 
-		workouts.addTOTheList(tricepWorkout);
-		workouts.addTOTheList(chestWorkout);
-		workouts.addTOTheList(backWorkout);
-		workouts.addTOTheList(shoulderWorkout);
+		workouts.save("t1",tricepWorkout);
+		workouts.save("c1",chestWorkout);
+		workouts.save("b1",backWorkout);
+		workouts.save("s1",shoulderWorkout);
 
 		
 
@@ -50,10 +50,12 @@ public class Main {
 
 		
 		
-		showDetails(tricepWorkout);
-		showDetails(backWorkout);
-		showDetails(shoulderWorkout);
-		showDetails(chestWorkout);
+		showDetails(workouts.findById("t1"));
+		showDetails(workouts.findById("c1"));
+		showDetails(workouts.findById("s1"));
+		showDetails(workouts.findById("b1"));
+
+		;
 
 
 		System.out.println("### SIZE OF THE WORKOUT REPOSITORY: "+ workouts.findAll().size());
