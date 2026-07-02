@@ -45,6 +45,13 @@ public class Exercise{
     }public double getCaloriesBurnedPerSet() {
         return caloriesBurnedPerSet;
     }
+    @Override
+    public String toString() {
+        return "Exercise [name=" + name + ", type=" + type + ", sets=" + sets + ", reps=" + reps
+                + ", caloriesBurnedPerSet=" + caloriesBurnedPerSet + "]";
+    }
+
+    
 
     
 }
