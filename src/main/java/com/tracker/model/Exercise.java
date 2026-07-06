@@ -1,4 +1,7 @@
 package com.tracker.model;
+
+import com.tracker.exception.InvalidWorkoutDataException;
+
 public class Exercise{
     private String name;
     private String type; // HIIT or stregth
@@ -24,7 +27,7 @@ public class Exercise{
     }
     public void setReps(int reps) {
         if(reps<0){
-            throw new IllegalArgumentException("reps can not be a negative number.");
+            throw new InvalidWorkoutDataException("reps can not be a negative number.");
         }
         this.reps = reps;
     }

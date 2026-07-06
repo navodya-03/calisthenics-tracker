@@ -34,11 +34,13 @@ public class Main {
 		Exercise newExercise3 = new Exercise("Weighted Pull-Ups", "Strength", 3, 12, 0);
 		Exercise newExercise4 = new Exercise("one sided dumbell rows", "Strength", 3, 12, 0);
 
-		Exercise newExercise5 = new Exercise("Weighted Push-ups", "Strength", 3, 12, 0);
-		Exercise newExercise6 = new Exercise("Bench press", "Strength", 3, 12, 0);
+		Exercise newExercise5 = new Exercise("Weighted Push-ups", "Strength", 3, 12, 30);
+		Exercise newExercise6 = new Exercise("Bench press", "Strength", 3, 12, 25);
 
 		Exercise newExercise7 = new Exercise("Diamond Push-ups", "Strength", 3, 12, 0);
 		Exercise newExercise8 = new Exercise("Cable push downs", "Strength", 3, 12, 0);
+
+		newExercise1.setReps(-5);
 
 		shoulderWorkout.addExercises(newExercise2);
 		shoulderWorkout.addExercises(newExercise1);
@@ -69,6 +71,7 @@ public class Main {
 		System.out.println("-------------------------------------WORKOUTS GET BY FOCUS AREA ------------------------------------");
 
 		analyzer.getWorkoutsByFocus("Upper-Body").forEach(System.out::println);
+		System.out.println("Total calories burned by chest workout "+ analyzer.calculateTotalCaloriesBurned("c1"));
 		
     }
 
