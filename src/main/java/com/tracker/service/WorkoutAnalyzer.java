@@ -1,6 +1,7 @@
 
 package com.tracker.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.tracker.model.Workout;
@@ -26,6 +27,26 @@ public class WorkoutAnalyzer {
        return workoutstream;
 
 
+    }
+
+    public double calculateTotalCaloriesBurned(String workoutId){
+
+        return Repo.findAll().stream()
+
+        .filter(workout -> workout.getId().equalsIgnoreCase(workoutId))
+
+        .flatMap(workout -> Arrays.stream(workout.exercises))
+
+        .filter(exercise -> exercise!=null)
+
+        .mapToDouble(exercise -> exercise.getCaloriesBurnedPerSet()*exercise.getSets())
+
+        .sum();
+
+        
+        
+
+        
     }
 
 
