@@ -3,6 +3,7 @@ package com.tracker; // <-- Tells Java this is in the tracker folder
 import com.tracker.model.Exercise; // <-- Tells Java where to find the Exercise model
 import com.tracker.model.Workout;
 import com.tracker.repository.WorkoutRepository;
+import com.tracker.service.WorkoutAnalyzer;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +17,9 @@ public class Main {
 
 
 		WorkoutRepository workouts = new WorkoutRepository();
+		WorkoutAnalyzer analyzer = new WorkoutAnalyzer(workouts);
+
+		
 
 		workouts.save("t1",tricepWorkout);
 		workouts.save("c1",chestWorkout);
@@ -59,6 +63,12 @@ public class Main {
 
 
 		System.out.println("### SIZE OF THE WORKOUT REPOSITORY: "+ workouts.findAll().size());
+
+		System.out.println("\n\n\n\n\n\n\n");
+
+		System.out.println("-------------------------------------WORKOUTS GET BY FOCUS AREA ------------------------------------");
+
+		analyzer.getWorkoutsByFocus("Upper-Body").forEach(System.out::println);
 		
     }
 

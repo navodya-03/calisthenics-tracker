@@ -1,5 +1,6 @@
 package com.tracker.model;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Workout {
@@ -59,4 +60,11 @@ public class Workout {
     public void setId(String id) {
         this.id = id;
     }
+    @Override
+    public String toString() {
+        return "Workout [id=" + id + ", date=" + date + ", focusArea=" + focusArea + ", exercises="
+                + Arrays.toString(exercises) + "]";
+    }
+
+    
 }
